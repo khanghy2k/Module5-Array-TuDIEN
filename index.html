@@ -5,6 +5,24 @@
     <title>Title</title>
 </head>
 <body>
-
+<p id="result"></p>
 </body>
+<script>
+const dictionary = [
+    { eng: "hello", vie: "xin chào" },
+    { eng: "world", vie: "thế giới" },
+    { eng: "cat", vie: "mèo" },
+    { eng: "dog", vie: "chó" },
+];
+function translate(word) {
+    for ( let i = 0;i<dictionary.length;i++){
+        if(dictionary[i].eng === word){
+            return dictionary[i].vie;
+        }
+    return "Khong tim thay";
+    }
+}
+document.getElementById('result').innerHTML=translate('hello');
+
+</script>
 </html>
