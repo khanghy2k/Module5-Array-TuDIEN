@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Translate</title>
 </head>
 <body>
-<p id="result"></p>
-</body>
 <script>
-const dictionary = [
-    { eng: "hello", vie: "xin chào" },
-    { eng: "world", vie: "thế giới" },
-    { eng: "cat", vie: "mèo" },
-    { eng: "dog", vie: "chó" },
-];
-function translate(word) {
-    for ( let i = 0;i<dictionary.length;i++){
-        if(dictionary[i].eng === word){
-            return dictionary[i].vie;
+    const dictionary = [
+        { eng: "hello", vie: "xin chào" },
+        { eng: "world", vie: "thế giới" },
+        { eng: "cat", vie: "mèo" },
+        { eng: "dog", vie: "chó" },
+    ];
+    let word =document.getElementById('TV').value;
+    function translate()
+    {
+        for (let i = 0; i < dictionary.length; i++) {
+            if (dictionary[i].vie === word.toLowerCase()) {
+               return dictionary[i].eng;
+            }
         }
-    return "Khong tim thay";
+        return  "Khong tim thay";
     }
-}
-document.getElementById('result').innerHTML=translate('hello');
+    document.getElementById('result').innerHTML = translate();
 
 </script>
+</body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <table border="1">
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</body>
+<script>
+    let drawTable = `<table border="1" width="100%">`
+    for (let i = 1; i <=9 ; i++) {
+        drawTable += `<tr>`
+        for (let j = 1; j <=9 ; j++) {
+            drawTable+= `<td> ${j} * ${i} = ${i*j}</td>`
+        }
+        drawTable+= `</tr>`
+    }
+    drawTable += '</table>'
+    console.log(drawTable)
+    document.write(drawTable)
+
+</script>
+</html>
