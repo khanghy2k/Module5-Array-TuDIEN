@@ -7,23 +7,25 @@
 <body>
 </body>
 <script>
-    let count = 0 ;
-    let n = 2 ;
-    let isPrime = true ;
+
+    let isPrime=true;
+    let count = 0;
+    let n = 2;
     while (count < 20) {
-        for (let i = 2; i<Math.sqrt(n);i++) {
-            if (n % i ===0) {
+        isPrime = true;
+        for (let i = 2 ; i <= Math.sqrt(n); i++) {
+            if (n % i === 0) {
                 isPrime = false;
                 break;
             }
         }
+        if (isPrime) {
+           document.write(' ',n.toString())
+            count++;
+        }
+        n++;
     }
-    if (isPrime) {
-        console.log(n);
-        count++;
-    }
-    n++;
-  // let isPrime = true ; // giả định numbers là số nguyên tố
+    // let isPrime = true ; // giả định numbers là số nguyên tố
   // let count = 0 ;
   // let numbers = parseInt(prompt("Nhap so : "));
   //   for (let n = 2; n <= Math.sqrt(numbers); n++) {
