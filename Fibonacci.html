@@ -33,6 +33,17 @@
             n++;
         }
     }
+    function sumFirstFibonacciNumber() {
+        let n = 0;
+        let sum = 0;
+        while (n < 20) {
+            let fn = Fibonacci(n);
+            sum += fn;
+            n++;
+        }
+        return sum
+    }
+
     function main() {
         console.log('20 số đầu tiên của dãy Fibonaci')
         for (let i = 0;i<=20;i++){
