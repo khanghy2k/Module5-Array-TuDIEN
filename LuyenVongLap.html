@@ -43,6 +43,18 @@
         }
         return sum
     }
+    function sumFirstNaturalNumber() {
+        let n = 1;
+        let sum = 0;
+        while (n <= 30) {
+            if (n % 7 === 0)
+            {
+                sum += n;
+            }
+            n++;
+        }
+        return sum;
+    }
 
     function main() {
         console.log('20 số đầu tiên của dãy Fibonaci')
