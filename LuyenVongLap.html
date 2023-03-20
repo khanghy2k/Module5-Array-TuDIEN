@@ -43,8 +43,7 @@
         }
         return sum
     }
-    function sumFirstNaturalNumber() {
-        let n = 1;
+    function sumFirstNaturalNumber(n) {
         let sum = 0;
         while (n <= 30) {
             if (n % 7 === 0)
@@ -55,7 +54,44 @@
         }
         return sum;
     }
-
+    function FizzBuzz(n) {
+        while (n <= 100) {
+            if (n % 3 === 0)
+            {
+               document.write('Fizz')
+            }
+            else if (n % 5 === 0)
+            {
+                document.write('Buzz')
+            }else if (n % 3 ===0 && n % 5 === 0)
+            {
+                document.write('FizzBuzz')
+            }
+            n++;
+        }
+    }
+    function facToRiOfaPositiveinteger(n) {
+       if (n < 0) {
+           return undefined;
+       }
+       let result = 1;
+       for (let i = 1 ;i<n;i++){
+           result *= i;
+       }
+       return result;
+    }
+    function rightTriangle() {
+        let n = 5;
+        for (let i = 1;i<=n;i++)
+        {
+            for (let j = 1 ;j<=i;j++)
+            {
+                document.write('*');
+            }
+            document.write('<br>')
+        }
+    }
+    for (let i =5;i<=n-1;i++)
     function main() {
         console.log('20 số đầu tiên của dãy Fibonaci')
         for (let i = 0;i<=20;i++){
