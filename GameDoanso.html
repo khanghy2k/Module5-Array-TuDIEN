@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+</style>
+<h1>GAME ĐOÁN SỐ</h1>
+<button style="color: darkred" id="btn" onclick="btn()">Bắt Đầu</button>
+<button style="color: darkred;display: none" id="btnWin" onclick="reset()">Chơi Lại</button>
+<input style="display: none;margin: 10px" type="number" id="wind"/>
+<label id="count"></label>
+<script>
+    let count = 3;
+    let random = Math.floor(Math.random() * 10) + 1;
+    function btn() {
+         let number = document.getElementById('wind');
+         number.style.display = "flex";
+        let input = +document.getElementById('wind').value;
+        if (input === random && count > 0) {
+            document.getElementById('count').innerHTML = 'Bạn đã đoán đúng ';
+            reset();
+        } else  {
+            document.getElementById('count').innerHTML = 'Số lượt chơi còn lại của bạn là ' + count;
+            count--;
+            if (count < 0) {
+                document.getElementById('count').innerHTML = 'Bạn đã thua';
+                reset();
+            }
+        }
+    }
+    function reset() {
+            document.getElementById('btn').innerHTML = 'Chơi Lại';
+            document.getElementById('btn').addEventListener("click", function(){
+            location.reload();
+            });
+          document.getElementById('wind').innerHTML ='';
+             let input1 = document.getElementById('wind');
+            input1.style.display = 'none'
+
+
+    }
+
+
+</script>
+</body>
+</html>
