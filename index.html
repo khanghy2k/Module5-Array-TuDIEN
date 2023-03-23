@@ -5,25 +5,36 @@
     <title>Translate</title>
 </head>
 <body>
+<label>Tiếng Việt</label>
+<textarea id="input-Text"></textarea>
+<label>Tiếng Anh</label>
+<textarea id="output-text"></textarea>
+<button id="translate-Button">TranSlate</button>
+
 <script>
     const dictionary = [
         { eng: "hello", vie: "xin chào" },
         { eng: "world", vie: "thế giới" },
         { eng: "cat", vie: "mèo" },
         { eng: "dog", vie: "chó" },
+        { eng: "people", vie: "con người" }
     ];
-    let word =document.getElementById('TV').value;
+    let translateButton = document.getElementById('translate-Button');
     function translate()
     {
+        let TV = document.getElementById('input-Text').value.toLowerCase();
+        let word ="";
         for (let i = 0; i < dictionary.length; i++) {
-            if (dictionary[i].vie === word.toLowerCase()) {
-               return dictionary[i].eng;
+            if (dictionary[i].vie === TV.toLowerCase()) {
+                word +=dictionary[i].eng;
+                document.getElementById('output-text').innerHTML= word+"";
+                break;
+            }else {
+                document.getElementById('output-text').innerText="Không tìm thấy";
             }
         }
-        return  "Khong tim thay";
     }
-    document.getElementById('result').innerHTML = translate();
-
+    translateButton.addEventListener("click", translate);
 </script>
 </body>
 </html>

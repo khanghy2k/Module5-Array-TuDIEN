@@ -16,20 +16,22 @@
 <h1>GAME ĐOÁN SỐ</h1>
 <button style="color: darkred" id="btn" onclick="btn()">Bắt Đầu</button>
 <button style="color: darkred;display: none" id="btnWin" onclick="reset()">Chơi Lại</button>
-<input style="display: none;margin: 10px" type="number" id="wind"/>
+<input style="display: none;margin: 10px" type="text" id="wind" placeholder="Vui lòng đoán số"/>
 <label id="count"></label>
 <script>
     let count = 3;
     let random = Math.floor(Math.random() * 10) + 1;
+
     function btn() {
-         let number = document.getElementById('wind');
-         number.style.display = "flex";
+        let number = document.getElementById('wind');
+        number.style.display = "flex";
         let input = +document.getElementById('wind').value;
         if (input === random && count > 0) {
             document.getElementById('count').innerHTML = 'Bạn đã đoán đúng ';
             reset();
-        } else  {
+        } else {
             document.getElementById('count').innerHTML = 'Số lượt chơi còn lại của bạn là ' + count;
+            document.getElementById('wind').innerHTML='';
             count--;
             if (count < 0) {
                 document.getElementById('count').innerHTML = 'Bạn đã thua';
@@ -37,14 +39,15 @@
             }
         }
     }
+
     function reset() {
-            document.getElementById('btn').innerHTML = 'Chơi Lại';
-            document.getElementById('btn').addEventListener("click", function(){
+        document.getElementById('btn').innerHTML = 'Chơi Lại';
+        document.getElementById('btn').addEventListener("click", function () {
             location.reload();
-            });
-          document.getElementById('wind').innerHTML ='';
-             let input1 = document.getElementById('wind');
-            input1.style.display = 'none'
+        });
+        document.getElementById('wind').innerHTML = '';
+        let input1 = document.getElementById('wind');
+        input1.style.display = 'none'
 
 
     }
